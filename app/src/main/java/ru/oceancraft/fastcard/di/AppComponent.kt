@@ -14,9 +14,10 @@ import javax.inject.Singleton
 )
 interface AppComponent {
     fun cardsComponent(): CardsComponent
-    fun newCardComponent() : NewCardComponent
-    fun scanComponent() : ScanComponent
-    fun cardViewComponent() : CardViewComponent
+    fun newCardComponent(): NewCardComponent
+    fun scanComponent(): ScanComponent
+    fun cardViewComponent(): CardViewComponent
+    fun backupRestoreComponent(): BackupRestoreComponent
 
     fun inject(mainActivity: MainActivity)
 }

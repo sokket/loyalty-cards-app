@@ -15,6 +15,7 @@ class CardsPM(
     private val router: Router
 ) : PresentationModel() {
 
+    val backupRestoreButton = action<Unit>()
     val elements = state<List<Card>>(emptyList())
     val addCard = action<Unit>()
     val click = action<Long>()
@@ -48,6 +49,12 @@ class CardsPM(
         click.observable
             .subscribe {
                 router.navigateTo(Screens.viewCard(it))
+            }
+            .untilUnbind()
+
+        backupRestoreButton.observable
+            .subscribe {
+                router.navigateTo(Screens.backupRestore())
             }
             .untilUnbind()
     }

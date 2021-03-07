@@ -1,10 +1,7 @@
 package ru.oceancraft.fastcard
 
 import com.github.terrakok.cicerone.androidx.FragmentScreen
-import ru.oceancraft.fastcard.ui.CardsFragment
-import ru.oceancraft.fastcard.ui.NewCardFragment
-import ru.oceancraft.fastcard.ui.ScanFragment
-import ru.oceancraft.fastcard.ui.ViewFragment
+import ru.oceancraft.fastcard.ui.*
 
 object Screens {
     fun cards() = FragmentScreen {
@@ -21,5 +18,9 @@ object Screens {
 
     fun viewCard(cardId : Long) = FragmentScreen {
         ViewFragment.newInstance(cardId)
+    }
+
+    fun backupRestore() = FragmentScreen {
+        BackupRestoreFragment()
     }
 }

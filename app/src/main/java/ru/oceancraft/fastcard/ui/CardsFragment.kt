@@ -31,6 +31,8 @@ class CardsFragment : PmFragment<CardsPM>() {
         }
 
         binding.addCardButton.clicks() bindTo pm.addCard
+
+        binding.banner.addButton.clicks() bindTo pm.addCard
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,6 +45,7 @@ class CardsFragment : PmFragment<CardsPM>() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentCardsBinding.inflate(inflater, container, false)
+        binding.appBar.applySystemWindowInsetsToPadding(top = true)
         return binding.root
     }
 
@@ -57,8 +60,8 @@ class CardsFragment : PmFragment<CardsPM>() {
 
             adapter = CardAdapter(
                 layoutInflater,
-                addButtonListener = {
-                    presentationModel.addCard.consumer.accept(Unit)
+                backupButtonListener = {
+                    presentationModel.backupRestoreButton.consumer.accept(Unit)
                 },
                 cardListener = {
                     presentationModel.click.consumer.accept(it)

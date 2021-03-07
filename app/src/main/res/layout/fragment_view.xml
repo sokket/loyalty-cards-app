@@ -47,7 +47,7 @@
         android:background="?selectableItemBackgroundBorderless"
         android:scaleType="fitXY"
         android:src="@drawable/dots_vertical"
-        android:tint="@color/text_info"
+        android:tint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

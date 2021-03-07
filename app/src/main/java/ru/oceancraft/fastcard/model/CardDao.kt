@@ -1,9 +1,6 @@
 package ru.oceancraft.fastcard.model
 
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
+import androidx.room.*
 import io.reactivex.Completable
 import io.reactivex.Observable
 import io.reactivex.Single
@@ -18,8 +15,11 @@ interface CardDao {
     fun load(): Single<List<Card>>
 
     @Query("SELECT * FROM Card WHERE id = :id")
-    fun getById(id : Long) : Single<Card>
+    fun getById(id: Long): Single<Card>
 
     @Query("DELETE FROM Card WHERE id = :id")
-    fun delete(id : Long) : Completable
+    fun delete(id: Long): Completable
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertAll(cards: List<Card>) : Single<List<Long>>
 }

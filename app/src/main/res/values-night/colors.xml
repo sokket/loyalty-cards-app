@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="collapsed_banner">#050505</color>
     <color name="list_bg">#0E0E0E</color>
     <color name="text_solid">#CDCDCD</color>
     <color name="text_info">#AEAEAE</color>
     <color name="fab_color">#FDFDFD</color>
     <color name="fab_tint">#02B153</color>
     <color name="logo_text">#FFFFFF</color>
+    <color name="teal_200">#FFFFFF</color>
+    <color name="teal_700">#FFFFFF</color>
 </resources>

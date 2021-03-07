@@ -8,7 +8,7 @@ import ru.oceancraft.fastcard.ui.*
 object Dagger {
     private lateinit var appComponent: AppComponent
 
-    fun init(app : App) {
+    fun init(app: App) {
         appComponent = DaggerAppComponent.builder()
             .appModule(AppModule(app.applicationContext))
             .build()
@@ -32,6 +32,10 @@ object Dagger {
 
     fun inject(viewFragment: ViewFragment) {
         appComponent.cardViewComponent().inject(viewFragment)
+    }
+
+    fun inject(backupRestoreFragment: BackupRestoreFragment) {
+        appComponent.backupRestoreComponent().inject(backupRestoreFragment)
     }
 
 }
