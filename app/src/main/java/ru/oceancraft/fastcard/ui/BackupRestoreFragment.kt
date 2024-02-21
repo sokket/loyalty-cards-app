@@ -79,6 +79,7 @@ class BackupRestoreFragment : PmFragment<BackupRestorePM>() {
         startActivityForResult(intent, 2)
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (resultCode != RESULT_OK)
             return
